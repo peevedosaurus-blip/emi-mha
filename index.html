@@ -1,3 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Negate (Emi Maeda) | My Hero Academia Fan Wiki</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  /* =============================================================
+     THEME: fandom-wiki style. --red drives the top bar,
+     --orange drives the infobox banners and quote box, and
+     --accent is the maroon used for links and inline emphasis.
+     ============================================================= */
+  :root{
+    --bg:        #e7e7ea;   /* gray page behind the content */
+    --panel:     #ffffff;   /* content + infobox surface */
+    --panel-2:   #f1f1f4;   /* subtle fills (tracks, portrait) */
+    --line:      #d9d9df;   /* light borders */
+    --ink:       #1f2024;
+    --ink-soft:  #6c6f78;
+    --head:      #14151a;
+    --red:       #98181c;   /* top bar */
+    --red-dk:    #6f1013;
+    --orange:    #ef9f2b;   /* infobox banners + quote */
+    --orange-dk: #d98718;
+    --accent:    #a5261f;   /* links + inline emphasis (maroon) */
+    --link:      #a5261f;
+    --maxw:      1160px;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    font-size:15px;
+    line-height:1.68;
+  }
+  a{ color:var(--link); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  img{ max-width:100%; display:block; }
+
+  /* ---------- top wiki chrome ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:20;
+    background:var(--red);
+    border-bottom:3px solid var(--red-dk);
+  }
+  .topbar__inner{
+    max-width:var(--maxw); margin:0 auto; padding:11px 20px;
+    display:flex; align-items:center; gap:16px;
+  }
+  .brand{
+    font-family:"Oswald",sans-serif; font-weight:700; letter-spacing:.06em;
+    text-transform:uppercase; color:#fff; font-size:16px; white-space:nowrap;
+    display:flex; align-items:center;
+  }
+  .brand img{ height:38px; width:auto; display:block; }
+  .brand b{ color:var(--orange); }
+  .topnav{ display:flex; gap:18px; margin-left:6px; }
+  .topnav a{
+    color:rgba(255,255,255,.85); font-size:13px; font-weight:500;
+    text-transform:uppercase; letter-spacing:.04em;
+  }
+  .topnav a:hover{ color:#fff; text-decoration:none; }
+  .search{
+    margin-left:auto; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28);
+    border-radius:999px; padding:7px 14px; color:#fff;
+    font-size:13px; min-width:180px;
+  }
+  .search::placeholder{ color:rgba(255,255,255,.7); }
+
+  /* ---------- layout ---------- */
+  .wrap{
+    max-width:var(--maxw); margin:0 auto; padding:26px 30px 70px;
+    background:var(--panel); border:1px solid var(--line);
+    display:grid; grid-template-columns:1fr 340px; gap:34px; align-items:start;
+  }
+
+  /* ---------- article ---------- */
+  .breadcrumb{ color:var(--ink-soft); font-size:12.5px; margin-bottom:14px; }
+  h1.title{
+    font-family:"Oswald",sans-serif; font-weight:700; color:var(--head);
+    font-size:44px; line-height:1.05; margin:0; letter-spacing:.01em;
+  }
+  .title__kanji{ color:var(--ink-soft); font-size:20px; font-weight:500; margin:6px 0 0; font-family:"Oswald",sans-serif; }
+
+  .tabs{
+    display:flex; gap:8px; margin:18px 0 26px; flex-wrap:wrap;
+  }
+  .tabs a{
+    padding:8px 16px; color:var(--ink); background:var(--panel-2);
+    border:1px solid var(--line); border-radius:6px;
+    font-family:"Oswald",sans-serif; text-transform:uppercase;
+    letter-spacing:.05em; font-size:14px; font-weight:500;
+  }
+  .tabs a.is-active{ color:#fff; background:var(--red); border-color:var(--red); }
+  .tabs a:hover{ text-decoration:none; border-color:var(--red); }
+  .tabs a.is-active:hover{ border-color:var(--red-dk); }
+
+  h2{
+    font-family:"Oswald",sans-serif; font-weight:600; color:var(--head);
+    font-size:26px; letter-spacing:.02em; margin:38px 0 4px;
+    padding-bottom:8px; border-bottom:2px solid var(--line);
+  }
+  h2 .en{ color:var(--ink-soft); font-size:15px; font-weight:500; margin-left:8px; }
+  h3{
+    font-family:"Oswald",sans-serif; font-weight:600; color:var(--head);
+    font-size:19px; margin:26px 0 6px; letter-spacing:.02em;
+  }
+  p{ margin:12px 0; }
+
+  blockquote{
+    margin:22px 0; padding:18px 24px; border-radius:6px;
+    background:var(--orange); color:#2a1c02;
+    font-size:17px; font-style:italic;
+  }
+  blockquote cite{ display:block; font-style:normal; font-weight:600; font-size:13px; color:#4a3208; margin-top:10px; }
+
+  ul.clean{ margin:10px 0; padding-left:22px; }
+  ul.clean li{ margin:7px 0; }
+  ul.clean li b{ color:var(--accent); }
+
+  .move{ margin:14px 0; padding:14px 18px; background:#fbf6ee; border:1px solid var(--line); border-left:4px solid var(--orange); border-radius:6px; }
+  .move b{ color:var(--accent); font-family:"Oswald",sans-serif; letter-spacing:.03em; font-size:16px; }
+
+  /* stat chart */
+  .stats{ margin:16px 0 4px; display:grid; gap:10px; max-width:460px; }
+  .stat{ display:grid; grid-template-columns:120px 1fr 44px; align-items:center; gap:12px; }
+  .stat__label{ font-family:"Oswald",sans-serif; text-transform:uppercase; letter-spacing:.04em; font-size:13px; color:var(--ink-soft); }
+  .stat__track{ display:block; height:9px; background:var(--panel-2); border:1px solid var(--line); border-radius:99px; overflow:hidden; }
+  .stat__fill{ display:block; height:100%; background:linear-gradient(90deg,var(--orange-dk),var(--orange)); border-radius:99px; }
+  .stat__grade{ font-family:"Oswald",sans-serif; font-weight:700; color:var(--accent); text-align:right; }
+
+  /* relationships */
+  .rel{ margin:14px 0; }
+  .rel h3{ margin-bottom:2px; }
+
+  /* references */
+  .refs{ font-size:13px; color:var(--ink-soft); }
   .refs li{ margin:6px 0; }
 
   /* gallery */
@@ -232,627 +378,6 @@
 
       <div class="ib__section">Portrayal</div>
       <div class="ib__row"><span class="ib__k">Japanese VA</span><span class="ib__v">Kaori Mizuhashi</span></div>
-    </div>
-  </aside>
-</div>
-
-<footer>
-  A fan-made page for an original character. Not affiliated with or endorsed by the creators of My Hero Academia.
-</footer>
-
-</body>
-</html>    border-radius:999px; padding:7px 14px; color:#fff;
-    font-size:13px; min-width:180px;
-  }
-  .search::placeholder{ color:rgba(255,255,255,.7); }
-
-  /* ---------- layout ---------- */
-  .wrap{
-    max-width:var(--maxw); margin:0 auto; padding:26px 30px 70px;
-    background:var(--panel); border:1px solid var(--line);
-    display:grid; grid-template-columns:1fr 340px; gap:34px; align-items:start;
-  }
-
-  /* ---------- article ---------- */
-  .breadcrumb{ color:var(--ink-soft); font-size:12.5px; margin-bottom:14px; }
-  h1.title{
-    font-family:"Oswald",sans-serif; font-weight:700; color:var(--head);
-    font-size:44px; line-height:1.05; margin:0; letter-spacing:.01em;
-  }
-  .title__kanji{ color:var(--ink-soft); font-size:20px; font-weight:500; margin:6px 0 0; font-family:"Oswald",sans-serif; }
-
-  .tabs{
-    display:flex; gap:8px; margin:18px 0 26px; flex-wrap:wrap;
-  }
-  .tabs a{
-    padding:8px 16px; color:var(--ink); background:var(--panel-2);
-    border:1px solid var(--line); border-radius:6px;
-    font-family:"Oswald",sans-serif; text-transform:uppercase;
-    letter-spacing:.05em; font-size:14px; font-weight:500;
-  }
-  .tabs a.is-active{ color:#fff; background:var(--red); border-color:var(--red); }
-  .tabs a:hover{ text-decoration:none; border-color:var(--red); }
-  .tabs a.is-active:hover{ border-color:var(--red-dk); }
-
-  h2{
-    font-family:"Oswald",sans-serif; font-weight:600; color:var(--head);
-    font-size:26px; letter-spacing:.02em; margin:38px 0 4px;
-    padding-bottom:8px; border-bottom:2px solid var(--line);
-  }
-  h2 .en{ color:var(--ink-soft); font-size:15px; font-weight:500; margin-left:8px; }
-  h3{
-    font-family:"Oswald",sans-serif; font-weight:600; color:var(--head);
-    font-size:19px; margin:26px 0 6px; letter-spacing:.02em;
-  }
-  p{ margin:12px 0; }
-
-  blockquote{
-    margin:22px 0; padding:18px 24px; border-radius:6px;
-    background:var(--orange); color:#2a1c02;
-    font-size:17px; font-style:italic;
-  }
-  blockquote cite{ display:block; font-style:normal; font-weight:600; font-size:13px; color:#4a3208; margin-top:10px; }
-
-  ul.clean{ margin:10px 0; padding-left:22px; }
-  ul.clean li{ margin:7px 0; }
-  ul.clean li b{ color:var(--accent); }
-
-  .move{ margin:14px 0; padding:14px 18px; background:#fbf6ee; border:1px solid var(--line); border-left:4px solid var(--orange); border-radius:6px; }
-  .move b{ color:var(--accent); font-family:"Oswald",sans-serif; letter-spacing:.03em; font-size:16px; }
-
-  /* stat chart */
-  .stats{ margin:16px 0 4px; display:grid; gap:10px; max-width:460px; }
-  .stat{ display:grid; grid-template-columns:120px 1fr 44px; align-items:center; gap:12px; }
-  .stat__label{ font-family:"Oswald",sans-serif; text-transform:uppercase; letter-spacing:.04em; font-size:13px; color:var(--ink-soft); }
-  .stat__track{ display:block; height:9px; background:var(--panel-2); border:1px solid var(--line); border-radius:99px; overflow:hidden; }
-  .stat__fill{ display:block; height:100%; background:linear-gradient(90deg,var(--orange-dk),var(--orange)); border-radius:99px; }
-  .stat__grade{ font-family:"Oswald",sans-serif; font-weight:700; color:var(--accent); text-align:right; }
-
-  /* relationships */
-  .rel{ margin:14px 0; }
-  .rel h3{ margin-bottom:2px; }
-
-  /* references */
-  .refs{ font-size:13px; color:var(--ink-soft); }
-  .refs li{ margin:6px 0; }
-
-  /* ---------- infobox ---------- */
-  .infobox{
-    background:var(--panel); border:1px solid var(--line); border-radius:6px;
-    overflow:hidden; position:sticky; top:74px; font-size:13.5px;
-  }
-  .ib__name{
-    background:var(--orange);
-    color:#2a1c02; text-align:center; padding:12px 14px;
-    font-family:"Oswald",sans-serif; font-weight:700; font-size:24px;
-    text-transform:uppercase; letter-spacing:.04em;
-  }
-  .ib__portrait{
-    aspect-ratio:3/4; background:var(--panel-2);
-    display:flex; align-items:center; justify-content:center; position:relative;
-    color:#c9ccd4;
-  }
-  .ib__portrait svg{ width:64%; opacity:.7; }
-  .ib__portrait .hint{
-    position:absolute; bottom:10px; left:0; right:0; text-align:center;
-    font-size:11px; color:var(--ink-soft); letter-spacing:.02em;
-  }
-  .ib__section{
-    background:var(--orange); color:#2a1c02;
-    font-family:"Oswald",sans-serif; text-transform:uppercase; letter-spacing:.05em;
-    font-size:13px; font-weight:700; padding:7px 14px;
-    text-align:center;
-  }
-  .ib__row{ display:grid; grid-template-columns:42% 58%; gap:8px; padding:7px 14px; border-top:1px solid var(--line); }
-  .ib__row:first-of-type{ border-top:none; }
-  .ib__k{ color:var(--ink-soft); font-weight:600; }
-  .ib__v{ color:var(--ink); }
-  .ib__v .fm{ color:var(--accent); font-size:11.5px; font-weight:600; }
-  .ib__v .tag{ color:var(--ink-soft); font-size:11.5px; }
-  .ib__v .jp{ display:block; font-size:12px; color:var(--ink-soft); margin-top:3px; }
-  .ib__v .jp i{ font-style:italic; }
-
-  footer{
-    max-width:var(--maxw); margin:0 auto; padding:20px 30px 50px;
-    color:var(--ink-soft); font-size:12.5px;
-  }
-
-  /* ---------- responsive ---------- */
-  @media (max-width:900px){
-    .wrap{ grid-template-columns:1fr; }
-    .infobox{ position:static; max-width:360px; margin:0 auto 10px; order:-1; }
-    h1.title{ font-size:34px; }
-    .topnav, .search{ display:none; }
-  }
-  @media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } }
-  :focus-visible{ outline:2px solid var(--red); outline-offset:2px; }
-</style>
-</head>
-<body>
-
-<!-- ================= TOP BAR ================= -->
-<header class="topbar">
-  <div class="topbar__inner">
-    <a class="brand" href="#top"><img src="https://static.wikia.nocookie.net/bokunoheroacademia/images/e/e6/Site-logo.png/revision/latest?cb=20210804214929" alt="My Hero Academia Wiki"></a>
-    <nav class="topnav">
-      <a href="#appearance">Appearance</a>
-      <a href="#personality">Personality</a>
-      <a href="#quirk">Quirk</a>
-      <a href="#relationships">Relationships</a>
-      <a href="#trivia">Trivia</a>
-    </nav>
-    <input class="search" placeholder="Search this wiki" aria-label="Search">
-  </div>
-</header>
-
-<div class="wrap">
-
-  <!-- ================= ARTICLE ================= -->
-  <main>
-    <div class="breadcrumb">Characters &rsaquo; U.A. High School &rsaquo; Class 1-A &rsaquo; <span style="color:var(--ink)">Negate</span></div>
-
-    <h1 class="title">Negate</h1>
-    <p class="title__kanji">前田恵美 &nbsp;•&nbsp; Maeda Emi</p>
-
-    <nav class="tabs" aria-label="Article sections">
-      <a href="#top" class="is-active">Article</a>
-      <a href="#quirk">Abilities</a>
-      <a href="#relationships">Relationships</a>
-      <a href="#gallery">Gallery</a>
-    </nav>
-
-    <blockquote id="top">
-      "Don't make it weird. I was already standing here."
-      <cite>Emi, after catching a classmate mid-fall and immediately pretending she had not.</cite>
-    </blockquote>
-
-    <p><b>Maeda Emi</b> (前田恵美), known by the hero name <b style="color:var(--accent)">Negate</b>, is a student in Class 1-A at U.A. High School and a former child actress. Guarded and dry, she hides behind an air of boredom that conceals how sharply she reads the people around her, and how much she actually cares about them. Her Quirk, <b>Negative Mass</b>, gives her flight, strength, and force manipulation potent enough that she spends more effort restraining it than using it.</p>
-
-    <!-- ================= APPEARANCE ================= -->
-    <h2 id="appearance">Appearance <span class="en">/ 外見</span></h2>
-    <p>Emi has soft, well-balanced features that give her a gentle, approachable look, one that contrasts sharply with the destructive potential of her Quirk. Her lips are naturally plush and expressive, lending her an air of calm composure even when she is deliberately withholding emotion.</p>
-    <p>Her pale blue eyes are her most defining trait: light in color, but carrying a sharp, assessing quality that can feel unsettling when held too long. Two beauty marks sit on her face, one beneath her eye and one just above the corner of her mouth, the second making even small shifts in her expression read as deliberate.</p>
-    <p>Her ash-brown hair frames her face neatly and rarely looks unkempt. Though her build is compact at 154 cm, her proportions are athletic, with toned legs and slightly wider hips that reflect her conditioning. Emi is fully aware of her own attractiveness and its social impact, but treats it as a situational tool rather than something to lean on.</p>
-
-    <!-- ================= PERSONALITY ================= -->
-    <h2 id="personality">Personality <span class="en">/ 性格</span></h2>
-    <p>Emi comes across as bored with almost everything: distant, unimpressed, and hard to reach. The boredom is not entirely fake, but it is not the whole truth either. Looking unimpressed is safer than looking nervous, hurt, or interested. Years in front of cameras left her sensitive to being watched and reduced to an image, so she keeps people at a careful distance and would rather be underestimated than seen too clearly.</p>
-    <p>She is still very much a teenager, and it shows. She can be petty, sarcastic, and deliberately difficult when annoyed, with a mean-girl edge she deploys precisely. She knows how to make someone feel stupid without raising her voice, and how to look innocent right after. She rarely bothers unless given a reason, but when she decides to be cutting she is frighteningly good at it.</p>
-    <p>Underneath, she cares far more than she lets on. She notices when people are hurt, scared, or overacting to hide something, even while pretending not to pay attention. Her kindness comes out sideways: she moves into position to back someone up without a word, warns people of danger and calls it obvious, and fixes problems then acts annoyed when thanked. Direct praise makes her deflect, especially praise for her looks, which she fears will make people see her as decorative instead of capable.</p>
-    <p>Her femininity matters to her without being a weakness or a performance. She likes cute things, soft colors, skincare, and a comfortably decorated space, and she will also calmly pick up a bug, play video games for hours, or throw someone into a wall if pushed far enough. That contrast unsettles people who assumed the pretty, bored girl would be squeamish.</p>
-    <p>Her Quirk shapes how she sees herself. Rather than feeling invincible, its raw potential makes her cautious to the point of fear, constantly aware of what could happen if she hits too hard or misjudges someone's limits. That restraint frustrates her, because she can feel the gap between what she can do and what she lets herself do. But when someone is in real danger the mask cracks: her body moves before her pride can stop it, and she acts with a sincerity she would rather no one saw.</p>
-
-    <!-- ================= QUIRK & ABILITIES ================= -->
-    <h2 id="quirk">Quirk &amp; Abilities <span class="en">/ 個性</span></h2>
-    <p><b style="color:var(--accent)">Negative Mass</b> (Emitter): though it is often mistaken for super strength, Emi's Quirk is really the manipulation of negative mass, matter that reacts to force in reverse. Push an object with negative mass and it accelerates the opposite way, much like the same poles of two magnets repelling each other. Emi can convert parts of her own body, and any object she touches, into negative mass, then control how it interacts with normal matter and force. The Quirk is a genetic variation of her father's Quirk, Mass Absorption; where he pulls mass into his body for durability, she creates and shapes negative mass instead.</p>
-
-    <h3>Strength</h3>
-    <p>By routing negative mass through herself and her targets, Emi produces feats that look like raw strength. A steady flow lets her lift enormous loads with almost no effort, while a sudden burst drives a forceful punch. Faced with something large and fast, such as a crashing plane, she can grip it and weave a web of negative mass through the whole structure so its own forward momentum works against the web and it slows to a safe, controlled stop without tearing itself apart. She can also lace negative mass through her own body, tuning a region to a set value such as minus two kilograms, to sharpen her impact resistance and control. At her current level she can lift or endure around 78 tons. As an adult that ceiling is projected to reach roughly 314 tons, about the weight of a large airliner.</p>
-
-    <h3>Flight</h3>
-    <p>Emi feels gravity like anyone else, but by converting the air molecules in contact with her into negative mass she generates a repulsive force between herself and the ground, letting her levitate and fly. It takes intense concentration and precise control of the negative mass flux to stay stable and on course, and a lapse in focus can send her falling. Her body sets the other limit: she can safely reach about 8,000 to 12,000 meters (roughly 26,000 to 39,000 feet), but any higher and thin air and low oxygen bring on hypoxia and altitude sickness, with dizziness, nausea, and fatigue that can escalate dangerously without supplemental oxygen.</p>
-
-    <h3>Fighting Style</h3>
-    <p>Emi arrived at U.A. with little formal combat training and leaned on brute force, which left her powerful but undisciplined and prone to missed strikes. As she trains, she builds a hybrid style around Judo and Karate. She uses Karate at range, staying upright and mobile with fast, heavy punches and kicks, then switches to Judo once an opponent closes in, turning their momentum into hip throws, sweeps, and trips before locking them down with joint locks and submissions on the ground. The blend suits her mix of agility and power.</p>
-
-    <h3>Overall Abilities</h3>
-    <p>A highly mobile fighter who dominates space through flight and force redirection rather than raw brawling. Her sharp read on opponents lets her exploit openings, though her habit of holding back remains her most persistent limitation, and, some would argue, her greatest untapped strength.</p>
-
-    <!-- rated out of 5; bar width = (score / 5) * 100 -->
-    <div class="stats" aria-label="Ability ratings">
-      <div class="stat"><span class="stat__label">Power</span><span class="stat__track"><span class="stat__fill" style="width:100%"></span></span><span class="stat__grade">5/5</span></div>
-      <div class="stat"><span class="stat__label">Speed</span><span class="stat__track"><span class="stat__fill" style="width:80%"></span></span><span class="stat__grade">4/5</span></div>
-      <div class="stat"><span class="stat__label">Technique</span><span class="stat__track"><span class="stat__fill" style="width:40%"></span></span><span class="stat__grade">2/5</span></div>
-      <div class="stat"><span class="stat__label">Intelligence</span><span class="stat__track"><span class="stat__fill" style="width:60%"></span></span><span class="stat__grade">3/5</span></div>
-      <div class="stat"><span class="stat__label">Cooperativeness</span><span class="stat__track"><span class="stat__fill" style="width:60%"></span></span><span class="stat__grade">3/5</span></div>
-    </div>
-
-    <h3>Super Moves</h3>
-    <div class="move"><b>Nullgrav.</b> Converts the air around her into negative mass for near-silent flight and instant mid-air redirection.</div>
-    <div class="move"><b>Suspension Web.</b> Threads a network of negative mass through a large moving object, like a falling vehicle or aircraft, so its own momentum decelerates it safely for rescue.</div>
-    <div class="move"><b>Backlash.</b> Releases a sudden burst of negative mass on contact, either driving a heavy strike or flinging an attacker back along their own force.</div>
-    <div class="move"><b>Dead Lift.</b> Runs a steady flow of negative mass through rubble or wreckage to cancel its weight, clearing tons of debris off trapped victims.</div>
-
-    <h3>Weaknesses</h3>
-    <ul class="clean">
-      <li><b>Enormous caloric cost.</b> Projecting negative mass keeps her muscles metabolically active even at rest, and her cells burn fuel at a hyper-efficient rate, producing far more ATP per glucose molecule than a normal body does. Sustaining the Quirk takes an estimated 20,000 to 35,000 calories a day, which is impractical to eat as ordinary meals, so she works with a nutritionist on a specialized high-protein supplement to meet the demand. Before that intervention, chronic energy deficiency left her fatigued and disoriented.</li>
-      <li><b>Constant precise control.</b> Too much output can hurt bystanders and too little can leave her exposed, so she has to gauge the mass of whatever she affects with real accuracy. She studies the typical weight of common people and objects to keep that margin tight. Heavier lifts and stronger opponents cost proportionally more energy.</li>
-      <li><b>Contact dependent.</b> She has to physically touch what she wants to affect. Against an opponent she cannot get a grip on, such as a body made of slime or water, her Quirk does almost nothing.</li>
-      <li><b>Overuse.</b> Pushing too far brings severe exhaustion, low blood sugar, disorientation, and eventually fainting. Exerting herself again after a fainting spell is genuinely dangerous and can lead to organ damage, coma, or worse.</li>
-    </ul>
-
-    <!-- ================= RELATIONSHIPS ================= -->
-    <h2 id="relationships">Relationships <span class="en">/ 人間関係</span></h2>
-    <div class="rel">
-      <h3>Eijiro Kirishima</h3>
-      <p>One of the first classmates to get past her defenses. His warmth and blunt loyalty remind her of her older brother, which makes her softer toward him than she would like. She still calls him annoying and rolls her eyes, but the words lose their edge. He includes her without making her explain why she wants to be included, and that makes him nearly impossible to push away.</p>
-    </div>
-    <div class="rel">
-      <h3>Katsuki Bakugo</h3>
-      <p>He unsettles her. Loud, aggressive, and exhausting, but also brilliant, driven, and completely unwilling to shrink his ambition to make anyone comfortable, which she quietly envies. Around him her boredom mask slips. He notices when she is holding back and pushes straight against it, refusing to treat her like a pretty, distant former child actress. It frustrates her, mostly because he is not always wrong.</p>
-    </div>
-
-    <!-- ================= HISTORY ================= -->
-    <h2 id="history">History <span class="en">/ 経歴</span></h2>
-    <p>Emi spent much of her childhood as a working actress and model, performing for cameras and adults who expected an image rather than a person. Close to her older brother but tired of being looked at before she was ever understood, she chose U.A. to be judged for what she can do instead of how she looks, and she has been quietly proving the point, one deflected compliment at a time, ever since.</p>
-
-    <!-- ================= TRIVIA ================= -->
-    <h2 id="trivia">Trivia <span class="en">/ 豆知識</span></h2>
-    <ul class="clean">
-      <li>Her birthday is August 19, making her a Leo.</li>
-      <li>She prefers dogs to cats, though she still has a soft spot for cats. She has an older dog named Mami.</li>
-      <li>She hates seeing tabloids or articles about herself, which mostly rehash her departure from acting or trade in idle gossip, and she dislikes anything that reminds her of her acting past. Even so, she still uses Herogram, where she has almost 200,000 followers.</li>
-      <li>She is a naturally gifted singer with a soothing voice, but chooses not to sing in front of others, since she is not one to draw attention to herself.</li>
-      <li>She is good at video games, though her Quirk has cost her more than a few controllers over the years.</li>
-      <li>She keeps cloud decor, acrylic organizers, and soft blue bedding, and she is unbothered by bugs, snakes, and lizards, finding people's screaming more irritating than the animal itself.</li>
-      <li>She enjoys hiking and knows a surprising amount about wildlife.</li>
-      <li>Her Quirk's durability means she rarely flinches at being bitten or scratched, which adds to the unnerving calm with which she handles things others refuse to touch.</li>
-      <li>Her hero name, "Negate," references the way her Quirk cancels out mass and force.</li>
-    </ul>
-
-    <!-- ================= NOTES & REFERENCES ================= -->
-    <h2 id="references">Notes &amp; References <span class="en">/ 出典</span></h2>
-    <ul class="clean refs">
-      <li>For a more in-depth character overview, see the <a href="https://docs.google.com/document/d/1lRDdhnXm5vg0JiIZPlXs6aXuzf1LGUiGM5_waG7rM68/edit?usp=sharing" target="_blank" rel="noopener">full character document</a>.</li>
-      <li>Emi's Quirk is built on the concept of negative mass, in particular the theory of runaway motion, adapted loosely for a setting that runs on comic-book science.</li>
-      <li>Concept inspired by an article by Esther Inglis-Arkell and by the <a href="https://powerlisting.fandom.com/wiki/Negative_Mass_Manipulation" target="_blank" rel="noopener">Powerlisting Wiki: Negative Mass Manipulation</a>.</li>
-      <li>Physics reference: <a href="https://en.wikipedia.org/wiki/Negative_mass" target="_blank" rel="noopener">Negative mass (Wikipedia)</a> and <a href="https://en.wikipedia.org/wiki/Negative_mass#Runaway_motion" target="_blank" rel="noopener">Runaway motion</a>.</li>
-      <li>Thanks to crownandantler for elaborating on the biology behind the Quirk.</li>
-    </ul>
-
-    <h2 id="gallery">Gallery <span class="en">/ 画像</span></h2>
-    <p style="color:var(--ink-soft)">Add your art here. Drop images into the same folder as this file and reference them, e.g. <code>&lt;img src="emi-1.png" alt="Emi"&gt;</code>.</p>
-  </main>
-
-  <!-- ================= INFOBOX ================= -->
-  <aside>
-    <div class="infobox">
-      <div class="ib__name">Negate</div>
-
-      <!-- PORTRAIT: replace this whole block with <img src="your-art.png" alt="Emi Maeda"> -->
-      <div class="ib__portrait">
-        <svg viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="50" cy="38" r="22" fill="currentColor" opacity=".9"/>
-          <path d="M18 128c0-24 14-42 32-42s32 18 32 42z" fill="currentColor" opacity=".9"/>
-        </svg>
-        <span class="hint">Replace with your character art</span>
-      </div>
-
-      <div class="ib__section">Biographical Information</div>
-      <div class="ib__row"><span class="ib__k">Kanji Name</span><span class="ib__v">前田恵美</span></div>
-      <div class="ib__row"><span class="ib__k">Rōmaji Name</span><span class="ib__v">Maeda Emi</span></div>
-      <div class="ib__row"><span class="ib__k">Alias</span><span class="ib__v">Inversion Hero: Negate<span class="jp">反転ヒーロー 否定（ネゲイト） <i>Hanten Hīrō Negeito</i></span></span></div>
-
-      <div class="ib__section">Personal Description</div>
-      <div class="ib__row"><span class="ib__k">Birthday</span><span class="ib__v">August 19 (Leo)</span></div>
-      <div class="ib__row"><span class="ib__k">Age</span><span class="ib__v">15 (First appearance to U.A. School Festival Arc)<br>16 (Pre-timeskip)<br>24 (Current)</span></div>
-      <div class="ib__row"><span class="ib__k">Gender</span><span class="ib__v">Female</span></div>
-      <div class="ib__row"><span class="ib__k">Sexuality</span><span class="ib__v">Demisexual</span></div>
-      <div class="ib__row"><span class="ib__k">Height</span><span class="ib__v">154 cm</span></div>
-      <div class="ib__row"><span class="ib__k">Hair Color</span><span class="ib__v">Light ash brown</span></div>
-      <div class="ib__row"><span class="ib__k">Eye Color</span><span class="ib__v">Pale blue</span></div>
-      <div class="ib__row"><span class="ib__k">Quirk</span><span class="ib__v">Negative Mass</span></div>
-
-      <div class="ib__section">Status</div>
-      <div class="ib__row"><span class="ib__k">Status</span><span class="ib__v">Alive</span></div>
-      <div class="ib__row"><span class="ib__k">Birthplace</span><span class="ib__v">Yokohama, Kanagawa Prefecture</span></div>
-      <div class="ib__row"><span class="ib__k">Family</span><span class="ib__v">Tatsuya <span class="tag">(Father)</span><br>Asahi <span class="tag">(Brother)</span></span></div>
-      <div class="ib__row"><span class="ib__k">Occupation</span><span class="ib__v">Pro Hero<br>Sidekick <span class="fm">(Formerly)</span><br>Student <span class="fm">(Formerly)</span></span></div>
-      <div class="ib__row"><span class="ib__k">Affiliation</span><span class="ib__v"><a href="https://myheroacademia.fandom.com/wiki/U.A._High_School" target="_blank" rel="noopener">U.A. High School</a> <span class="fm">(Formerly)</span></span></div>
-      <div class="ib__row"><span class="ib__k">Fighting Style</span><span class="ib__v">Close combat</span></div>
-
-      <div class="ib__section">Portrayal</div>
-      <div class="ib__row"><span class="ib__k">Japanese VA</span><span class="ib__v">Kaori Mizuhashi</span></div>
-    </div>
-  </aside>
-</div>
-
-<footer>
-  A fan-made page for an original character. Not affiliated with or endorsed by the creators of My Hero Academia.
-</footer>
-
-</body>
-</html>    border-radius:999px; padding:7px 14px; color:#fff;
-    font-size:13px; min-width:180px;
-  }
-  .search::placeholder{ color:rgba(255,255,255,.7); }
-
-  /* ---------- layout ---------- */
-  .wrap{
-    max-width:var(--maxw); margin:0 auto; padding:26px 30px 70px;
-    background:var(--panel); border:1px solid var(--line);
-    display:grid; grid-template-columns:1fr 340px; gap:34px; align-items:start;
-  }
-
-  /* ---------- article ---------- */
-  .breadcrumb{ color:var(--ink-soft); font-size:12.5px; margin-bottom:14px; }
-  h1.title{
-    font-family:"Oswald",sans-serif; font-weight:700; color:var(--head);
-    font-size:44px; line-height:1.05; margin:0; letter-spacing:.01em;
-  }
-  .title__kanji{ color:var(--ink-soft); font-size:20px; font-weight:500; margin:6px 0 0; font-family:"Oswald",sans-serif; }
-
-  .tabs{
-    display:flex; gap:8px; margin:18px 0 26px; flex-wrap:wrap;
-  }
-  .tabs a{
-    padding:8px 16px; color:var(--ink); background:var(--panel-2);
-    border:1px solid var(--line); border-radius:6px;
-    font-family:"Oswald",sans-serif; text-transform:uppercase;
-    letter-spacing:.05em; font-size:14px; font-weight:500;
-  }
-  .tabs a.is-active{ color:#fff; background:var(--red); border-color:var(--red); }
-  .tabs a:hover{ text-decoration:none; border-color:var(--red); }
-  .tabs a.is-active:hover{ border-color:var(--red-dk); }
-
-  h2{
-    font-family:"Oswald",sans-serif; font-weight:600; color:var(--head);
-    font-size:26px; letter-spacing:.02em; margin:38px 0 4px;
-    padding-bottom:8px; border-bottom:2px solid var(--line);
-  }
-  h2 .en{ color:var(--ink-soft); font-size:15px; font-weight:500; margin-left:8px; }
-  h3{
-    font-family:"Oswald",sans-serif; font-weight:600; color:var(--head);
-    font-size:19px; margin:26px 0 6px; letter-spacing:.02em;
-  }
-  p{ margin:12px 0; }
-
-  blockquote{
-    margin:22px 0; padding:18px 24px; border-radius:6px;
-    background:var(--orange); color:#2a1c02;
-    font-size:17px; font-style:italic;
-  }
-  blockquote cite{ display:block; font-style:normal; font-weight:600; font-size:13px; color:#4a3208; margin-top:10px; }
-
-  ul.clean{ margin:10px 0; padding-left:22px; }
-  ul.clean li{ margin:7px 0; }
-  ul.clean li b{ color:var(--accent); }
-
-  .move{ margin:14px 0; padding:14px 18px; background:#fbf6ee; border:1px solid var(--line); border-left:4px solid var(--orange); border-radius:6px; }
-  .move b{ color:var(--accent); font-family:"Oswald",sans-serif; letter-spacing:.03em; font-size:16px; }
-
-  /* stat chart */
-  .stats{ margin:16px 0 4px; display:grid; gap:10px; max-width:460px; }
-  .stat{ display:grid; grid-template-columns:120px 1fr 44px; align-items:center; gap:12px; }
-  .stat__label{ font-family:"Oswald",sans-serif; text-transform:uppercase; letter-spacing:.04em; font-size:13px; color:var(--ink-soft); }
-  .stat__track{ display:block; height:9px; background:var(--panel-2); border:1px solid var(--line); border-radius:99px; overflow:hidden; }
-  .stat__fill{ display:block; height:100%; background:linear-gradient(90deg,var(--orange-dk),var(--orange)); border-radius:99px; }
-  .stat__grade{ font-family:"Oswald",sans-serif; font-weight:700; color:var(--accent); text-align:right; }
-
-  /* relationships */
-  .rel{ margin:14px 0; }
-  .rel h3{ margin-bottom:2px; }
-
-  /* references */
-  .refs{ font-size:13px; color:var(--ink-soft); }
-  .refs li{ margin:6px 0; }
-
-  /* ---------- infobox ---------- */
-  .infobox{
-    background:var(--panel); border:1px solid var(--line); border-radius:6px;
-    overflow:hidden; position:sticky; top:74px; font-size:13.5px;
-  }
-  .ib__name{
-    background:var(--orange);
-    color:#2a1c02; text-align:center; padding:12px 14px;
-    font-family:"Oswald",sans-serif; font-weight:700; font-size:24px;
-    text-transform:uppercase; letter-spacing:.04em;
-  }
-  .ib__portrait{
-    aspect-ratio:3/4; background:var(--panel-2);
-    display:flex; align-items:center; justify-content:center; position:relative;
-    color:#c9ccd4;
-  }
-  .ib__portrait svg{ width:64%; opacity:.7; }
-  .ib__portrait .hint{
-    position:absolute; bottom:10px; left:0; right:0; text-align:center;
-    font-size:11px; color:var(--ink-soft); letter-spacing:.02em;
-  }
-  .ib__section{
-    background:var(--orange); color:#2a1c02;
-    font-family:"Oswald",sans-serif; text-transform:uppercase; letter-spacing:.05em;
-    font-size:13px; font-weight:700; padding:7px 14px;
-    text-align:center;
-  }
-  .ib__row{ display:grid; grid-template-columns:42% 58%; gap:8px; padding:7px 14px; border-top:1px solid var(--line); }
-  .ib__row:first-of-type{ border-top:none; }
-  .ib__k{ color:var(--ink-soft); font-weight:600; }
-  .ib__v{ color:var(--ink); }
-
-  footer{
-    max-width:var(--maxw); margin:0 auto; padding:20px 30px 50px;
-    color:var(--ink-soft); font-size:12.5px;
-  }
-
-  /* ---------- responsive ---------- */
-  @media (max-width:900px){
-    .wrap{ grid-template-columns:1fr; }
-    .infobox{ position:static; max-width:360px; margin:0 auto 10px; order:-1; }
-    h1.title{ font-size:34px; }
-    .topnav, .search{ display:none; }
-  }
-  @media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } }
-  :focus-visible{ outline:2px solid var(--red); outline-offset:2px; }
-</style>
-</head>
-<body>
-
-<!-- ================= TOP BAR ================= -->
-<header class="topbar">
-  <div class="topbar__inner">
-    <a class="brand" href="#top"><img src="https://static.wikia.nocookie.net/bokunoheroacademia/images/e/e6/Site-logo.png/revision/latest?cb=20210804214929" alt="My Hero Academia Wiki"></a>
-    <nav class="topnav">
-      <a href="#appearance">Appearance</a>
-      <a href="#personality">Personality</a>
-      <a href="#quirk">Quirk</a>
-      <a href="#relationships">Relationships</a>
-      <a href="#trivia">Trivia</a>
-    </nav>
-    <input class="search" placeholder="Search this wiki" aria-label="Search">
-  </div>
-</header>
-
-<div class="wrap">
-
-  <!-- ================= ARTICLE ================= -->
-  <main>
-    <div class="breadcrumb">Characters &rsaquo; U.A. High School &rsaquo; Class 1-A &rsaquo; <span style="color:var(--ink)">Negate</span></div>
-
-    <h1 class="title">Negate</h1>
-    <p class="title__kanji">前田恵美 &nbsp;•&nbsp; Maeda Emi</p>
-
-    <nav class="tabs" aria-label="Article sections">
-      <a href="#top" class="is-active">Article</a>
-      <a href="#quirk">Abilities</a>
-      <a href="#relationships">Relationships</a>
-      <a href="#gallery">Gallery</a>
-    </nav>
-
-    <blockquote id="top">
-      "Don't make it weird. I was already standing here."
-      <cite>Emi, after catching a classmate mid-fall and immediately pretending she had not.</cite>
-    </blockquote>
-
-    <p><b>Maeda Emi</b> (前田恵美), known by the hero name <b style="color:var(--accent)">Negate</b>, is a student in Class 1-A at U.A. High School and a former child actress. Guarded and dry, she hides behind an air of boredom that conceals how sharply she reads the people around her, and how much she actually cares about them. Her Quirk, <b>Negative Mass</b>, gives her flight, strength, and force manipulation potent enough that she spends more effort restraining it than using it.</p>
-
-    <!-- ================= APPEARANCE ================= -->
-    <h2 id="appearance">Appearance <span class="en">/ 外見</span></h2>
-    <p>Emi has soft, well-balanced features that give her a gentle, approachable look, one that contrasts sharply with the destructive potential of her Quirk. Her lips are naturally plush and expressive, lending her an air of calm composure even when she is deliberately withholding emotion.</p>
-    <p>Her pale blue eyes are her most defining trait: light in color, but carrying a sharp, assessing quality that can feel unsettling when held too long. Two beauty marks sit on her face, one beneath her eye and one just above the corner of her mouth, the second making even small shifts in her expression read as deliberate.</p>
-    <p>Her ash-brown hair frames her face neatly and rarely looks unkempt. Though her build is compact at 154 cm, her proportions are athletic, with toned legs and slightly wider hips that reflect her conditioning. Emi is fully aware of her own attractiveness and its social impact, but treats it as a situational tool rather than something to lean on.</p>
-
-    <!-- ================= PERSONALITY ================= -->
-    <h2 id="personality">Personality <span class="en">/ 性格</span></h2>
-    <p>Emi comes across as bored with almost everything: distant, unimpressed, and hard to reach. The boredom is not entirely fake, but it is not the whole truth either. Looking unimpressed is safer than looking nervous, hurt, or interested. Years in front of cameras left her sensitive to being watched and reduced to an image, so she keeps people at a careful distance and would rather be underestimated than seen too clearly.</p>
-    <p>She is still very much a teenager, and it shows. She can be petty, sarcastic, and deliberately difficult when annoyed, with a mean-girl edge she deploys precisely. She knows how to make someone feel stupid without raising her voice, and how to look innocent right after. She rarely bothers unless given a reason, but when she decides to be cutting she is frighteningly good at it.</p>
-    <p>Underneath, she cares far more than she lets on. She notices when people are hurt, scared, or overacting to hide something, even while pretending not to pay attention. Her kindness comes out sideways: she moves into position to back someone up without a word, warns people of danger and calls it obvious, and fixes problems then acts annoyed when thanked. Direct praise makes her deflect, especially praise for her looks, which she fears will make people see her as decorative instead of capable.</p>
-    <p>Her femininity matters to her without being a weakness or a performance. She likes cute things, soft colors, skincare, and a comfortably decorated space, and she will also calmly pick up a bug, play video games for hours, or throw someone into a wall if pushed far enough. That contrast unsettles people who assumed the pretty, bored girl would be squeamish.</p>
-    <p>Her Quirk shapes how she sees herself. Rather than feeling invincible, its raw potential makes her cautious to the point of fear, constantly aware of what could happen if she hits too hard or misjudges someone's limits. That restraint frustrates her, because she can feel the gap between what she can do and what she lets herself do. But when someone is in real danger the mask cracks: her body moves before her pride can stop it, and she acts with a sincerity she would rather no one saw.</p>
-
-    <!-- ================= QUIRK & ABILITIES ================= -->
-    <h2 id="quirk">Quirk &amp; Abilities <span class="en">/ 個性</span></h2>
-    <p><b style="color:var(--accent)">Negative Mass</b> (Emitter): though it is often mistaken for super strength, Emi's Quirk is really the manipulation of negative mass, matter that reacts to force in reverse. Push an object with negative mass and it accelerates the opposite way, much like the same poles of two magnets repelling each other. Emi can convert parts of her own body, and any object she touches, into negative mass, then control how it interacts with normal matter and force. The Quirk is a genetic variation of her father's Quirk, Mass Absorption; where he pulls mass into his body for durability, she creates and shapes negative mass instead.</p>
-
-    <h3>Strength</h3>
-    <p>By routing negative mass through herself and her targets, Emi produces feats that look like raw strength. A steady flow lets her lift enormous loads with almost no effort, while a sudden burst drives a forceful punch. Faced with something large and fast, such as a crashing plane, she can grip it and weave a web of negative mass through the whole structure so its own forward momentum works against the web and it slows to a safe, controlled stop without tearing itself apart. She can also lace negative mass through her own body, tuning a region to a set value such as minus two kilograms, to sharpen her impact resistance and control. At her current level she can lift or endure around 78 tons. As an adult that ceiling is projected to reach roughly 314 tons, about the weight of a large airliner.</p>
-
-    <h3>Flight</h3>
-    <p>Emi feels gravity like anyone else, but by converting the air molecules in contact with her into negative mass she generates a repulsive force between herself and the ground, letting her levitate and fly. It takes intense concentration and precise control of the negative mass flux to stay stable and on course, and a lapse in focus can send her falling. Her body sets the other limit: she can safely reach about 8,000 to 12,000 meters (roughly 26,000 to 39,000 feet), but any higher and thin air and low oxygen bring on hypoxia and altitude sickness, with dizziness, nausea, and fatigue that can escalate dangerously without supplemental oxygen.</p>
-
-    <h3>Fighting Style</h3>
-    <p>Emi arrived at U.A. with little formal combat training and leaned on brute force, which left her powerful but undisciplined and prone to missed strikes. As she trains, she builds a hybrid style around Judo and Karate. She uses Karate at range, staying upright and mobile with fast, heavy punches and kicks, then switches to Judo once an opponent closes in, turning their momentum into hip throws, sweeps, and trips before locking them down with joint locks and submissions on the ground. The blend suits her mix of agility and power.</p>
-
-    <h3>Overall Abilities</h3>
-    <p>A highly mobile fighter who dominates space through flight and force redirection rather than raw brawling. Her sharp read on opponents lets her exploit openings, though her habit of holding back remains her most persistent limitation, and, some would argue, her greatest untapped strength.</p>
-
-    <!-- rated out of 5; bar width = (score / 5) * 100 -->
-    <div class="stats" aria-label="Ability ratings">
-      <div class="stat"><span class="stat__label">Power</span><span class="stat__track"><span class="stat__fill" style="width:100%"></span></span><span class="stat__grade">5/5</span></div>
-      <div class="stat"><span class="stat__label">Speed</span><span class="stat__track"><span class="stat__fill" style="width:80%"></span></span><span class="stat__grade">4/5</span></div>
-      <div class="stat"><span class="stat__label">Technique</span><span class="stat__track"><span class="stat__fill" style="width:40%"></span></span><span class="stat__grade">2/5</span></div>
-      <div class="stat"><span class="stat__label">Intelligence</span><span class="stat__track"><span class="stat__fill" style="width:60%"></span></span><span class="stat__grade">3/5</span></div>
-      <div class="stat"><span class="stat__label">Cooperativeness</span><span class="stat__track"><span class="stat__fill" style="width:60%"></span></span><span class="stat__grade">3/5</span></div>
-    </div>
-
-    <h3>Super Moves</h3>
-    <div class="move"><b>Nullgrav.</b> Converts the air around her into negative mass for near-silent flight and instant mid-air redirection.</div>
-    <div class="move"><b>Suspension Web.</b> Threads a network of negative mass through a large moving object, like a falling vehicle or aircraft, so its own momentum decelerates it safely for rescue.</div>
-    <div class="move"><b>Backlash.</b> Releases a sudden burst of negative mass on contact, either driving a heavy strike or flinging an attacker back along their own force.</div>
-    <div class="move"><b>Dead Lift.</b> Runs a steady flow of negative mass through rubble or wreckage to cancel its weight, clearing tons of debris off trapped victims.</div>
-
-    <h3>Weaknesses</h3>
-    <ul class="clean">
-      <li><b>Enormous caloric cost.</b> Projecting negative mass keeps her muscles metabolically active even at rest, and her cells burn fuel at a hyper-efficient rate, producing far more ATP per glucose molecule than a normal body does. Sustaining the Quirk takes an estimated 20,000 to 35,000 calories a day, which is impractical to eat as ordinary meals, so she works with a nutritionist on a specialized high-protein supplement to meet the demand. Before that intervention, chronic energy deficiency left her fatigued and disoriented.</li>
-      <li><b>Constant precise control.</b> Too much output can hurt bystanders and too little can leave her exposed, so she has to gauge the mass of whatever she affects with real accuracy. She studies the typical weight of common people and objects to keep that margin tight. Heavier lifts and stronger opponents cost proportionally more energy.</li>
-      <li><b>Contact dependent.</b> She has to physically touch what she wants to affect. Against an opponent she cannot get a grip on, such as a body made of slime or water, her Quirk does almost nothing.</li>
-      <li><b>Overuse.</b> Pushing too far brings severe exhaustion, low blood sugar, disorientation, and eventually fainting. Exerting herself again after a fainting spell is genuinely dangerous and can lead to organ damage, coma, or worse.</li>
-    </ul>
-
-    <!-- ================= RELATIONSHIPS ================= -->
-    <h2 id="relationships">Relationships <span class="en">/ 人間関係</span></h2>
-    <div class="rel">
-      <h3>Eijiro Kirishima</h3>
-      <p>One of the first classmates to get past her defenses. His warmth and blunt loyalty remind her of her older brother, which makes her softer toward him than she would like. She still calls him annoying and rolls her eyes, but the words lose their edge. He includes her without making her explain why she wants to be included, and that makes him nearly impossible to push away.</p>
-    </div>
-    <div class="rel">
-      <h3>Katsuki Bakugo</h3>
-      <p>He unsettles her. Loud, aggressive, and exhausting, but also brilliant, driven, and completely unwilling to shrink his ambition to make anyone comfortable, which she quietly envies. Around him her boredom mask slips. He notices when she is holding back and pushes straight against it, refusing to treat her like a pretty, distant former child actress. It frustrates her, mostly because he is not always wrong.</p>
-    </div>
-
-    <!-- ================= HISTORY ================= -->
-    <h2 id="history">History <span class="en">/ 経歴</span></h2>
-    <p>Emi spent much of her childhood as a working actress and model, performing for cameras and adults who expected an image rather than a person. Close to her older brother but tired of being looked at before she was ever understood, she chose U.A. to be judged for what she can do instead of how she looks, and she has been quietly proving the point, one deflected compliment at a time, ever since.</p>
-
-    <!-- ================= TRIVIA ================= -->
-    <h2 id="trivia">Trivia <span class="en">/ 豆知識</span></h2>
-    <ul class="clean">
-      <li>Her birthday is August 19, making her a Leo.</li>
-      <li>She prefers dogs to cats, though she still has a soft spot for cats. She has an older dog named Mami.</li>
-      <li>She hates seeing tabloids or articles about herself, which mostly rehash her departure from acting or trade in idle gossip, and she dislikes anything that reminds her of her acting past. Even so, she still uses Herogram, where she has almost 200,000 followers.</li>
-      <li>She is a naturally gifted singer with a soothing voice, but chooses not to sing in front of others, since she is not one to draw attention to herself.</li>
-      <li>She is good at video games, though her Quirk has cost her more than a few controllers over the years.</li>
-      <li>She keeps cloud decor, acrylic organizers, and soft blue bedding, and she is unbothered by bugs, snakes, and lizards, finding people's screaming more irritating than the animal itself.</li>
-      <li>She enjoys hiking and knows a surprising amount about wildlife.</li>
-      <li>Her Quirk's durability means she rarely flinches at being bitten or scratched, which adds to the unnerving calm with which she handles things others refuse to touch.</li>
-      <li>Her hero name, "Negate," references the way her Quirk cancels out mass and force.</li>
-    </ul>
-
-    <!-- ================= NOTES & REFERENCES ================= -->
-    <h2 id="references">Notes &amp; References <span class="en">/ 出典</span></h2>
-    <ul class="clean refs">
-      <li>For a more in-depth character overview, see the <a href="https://docs.google.com/document/d/1lRDdhnXm5vg0JiIZPlXs6aXuzf1LGUiGM5_waG7rM68/edit?usp=sharing" target="_blank" rel="noopener">full character document</a>.</li>
-      <li>Emi's Quirk is built on the concept of negative mass, in particular the theory of runaway motion, adapted loosely for a setting that runs on comic-book science.</li>
-      <li>Concept inspired by an article by Esther Inglis-Arkell and by the <a href="https://powerlisting.fandom.com/wiki/Negative_Mass_Manipulation" target="_blank" rel="noopener">Powerlisting Wiki: Negative Mass Manipulation</a>.</li>
-      <li>Physics reference: <a href="https://en.wikipedia.org/wiki/Negative_mass" target="_blank" rel="noopener">Negative mass (Wikipedia)</a> and <a href="https://en.wikipedia.org/wiki/Negative_mass#Runaway_motion" target="_blank" rel="noopener">Runaway motion</a>.</li>
-      <li>Thanks to crownandantler for elaborating on the biology behind the Quirk.</li>
-    </ul>
-
-    <h2 id="gallery">Gallery <span class="en">/ 画像</span></h2>
-    <p style="color:var(--ink-soft)">Add your art here. Drop images into the same folder as this file and reference them, e.g. <code>&lt;img src="emi-1.png" alt="Emi"&gt;</code>.</p>
-  </main>
-
-  <!-- ================= INFOBOX ================= -->
-  <aside>
-    <div class="infobox">
-      <div class="ib__name">Negate</div>
-
-      <!-- PORTRAIT: replace this whole block with <img src="your-art.png" alt="Emi Maeda"> -->
-      <div class="ib__portrait">
-        <svg viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="50" cy="38" r="22" fill="currentColor" opacity=".9"/>
-          <path d="M18 128c0-24 14-42 32-42s32 18 32 42z" fill="currentColor" opacity=".9"/>
-        </svg>
-        <span class="hint">Replace with your character art</span>
-      </div>
-
-      <div class="ib__section">Biographical Information</div>
-      <div class="ib__row"><span class="ib__k">Kanji</span><span class="ib__v">前田恵美</span></div>
-      <div class="ib__row"><span class="ib__k">Rōmaji</span><span class="ib__v">Maeda Emi</span></div>
-      <div class="ib__row"><span class="ib__k">Alias</span><span class="ib__v">Negate</span></div>
-      <div class="ib__row"><span class="ib__k">Birthday</span><span class="ib__v">August 19 (Leo)</span></div>
-      <div class="ib__row"><span class="ib__k">Age</span><span class="ib__v">15 (First appearance to U.A. School Festival Arc)<br>16 (Pre-timeskip)<br>24 (Current)</span></div>
-      <div class="ib__row"><span class="ib__k">Gender</span><span class="ib__v">Female</span></div>
-      <div class="ib__row"><span class="ib__k">Sexuality</span><span class="ib__v">Demisexual</span></div>
-      <div class="ib__row"><span class="ib__k">Nationality</span><span class="ib__v">Japanese</span></div>
-
-      <div class="ib__section">Physical Description</div>
-      <div class="ib__row"><span class="ib__k">Height</span><span class="ib__v">154 cm</span></div>
-      <div class="ib__row"><span class="ib__k">Hair Color</span><span class="ib__v">Light ash brown</span></div>
-      <div class="ib__row"><span class="ib__k">Eye Color</span><span class="ib__v">Pale blue</span></div>
-
-      <div class="ib__section">Status</div>
-      <div class="ib__row"><span class="ib__k">Status</span><span class="ib__v">Active</span></div>
-      <div class="ib__row"><span class="ib__k">Affiliation</span><span class="ib__v">U.A. High School</span></div>
-      <div class="ib__row"><span class="ib__k">Occupation</span><span class="ib__v">Student · Hero-in-training</span></div>
-      <div class="ib__row"><span class="ib__k">Class</span><span class="ib__v">1-A</span></div>
-
-      <div class="ib__section">Quirk</div>
-      <div class="ib__row"><span class="ib__k">Quirk</span><span class="ib__v">Negative Mass</span></div>
-      <div class="ib__row"><span class="ib__k">Type</span><span class="ib__v">Emitter</span></div>
-      <div class="ib__row"><span class="ib__k">Derived From</span><span class="ib__v">Mass Absorption (father)</span></div>
-
-      <div class="ib__section">Voice Actor</div>
-      <div class="ib__row"><span class="ib__k">Japanese</span><span class="ib__v">Kaori Mizuhashi</span></div>
     </div>
   </aside>
 </div>
