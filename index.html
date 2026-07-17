@@ -176,6 +176,20 @@
     font-family:"Oswald",sans-serif; font-weight:700; font-size:24px;
     text-transform:uppercase; letter-spacing:.04em;
   }
+  .ib__costumes{
+    display:flex; justify-content:center; flex-wrap:wrap;
+    padding:8px 6px; border-bottom:1px solid var(--line);
+  }
+  .cbtn{
+    background:none; border:none; cursor:pointer;
+    padding:2px 10px; color:var(--ink-soft);
+    font-family:"Oswald",sans-serif; font-size:12.5px; font-weight:600;
+    text-transform:uppercase; letter-spacing:.04em;
+    border-right:1px solid var(--line);
+  }
+  .cbtn:last-child{ border-right:none; }
+  .cbtn:hover{ color:var(--ink); }
+  .cbtn.is-active{ color:var(--accent); }
   .ib__portrait{
     aspect-ratio:3/4; background:var(--panel-2);
     display:flex; align-items:center; justify-content:center; position:relative;
@@ -361,11 +375,18 @@
   <!-- ================= INFOBOX ================= -->
   <aside>
     <div class="infobox">
-      <div class="ib__name">Negate</div>
+      <div class="ib__name">Emi Maeda</div>
 
-      <!-- PORTRAIT: change the filename below to use a different image -->
+      <!-- COSTUME TOGGLE: point each data-src at the correct image file for that look -->
+      <div class="ib__costumes">
+        <button class="cbtn is-active" data-src="1.webp" data-label="Hero Costume">Hero Costume</button>
+        <button class="cbtn" data-src="IMG_0648.webp" data-label="Civilian">Civilian</button>
+        <button class="cbtn" data-src="IMG_5619.webp" data-label="School Uniform">School Uniform</button>
+      </div>
+
+      <!-- PORTRAIT: default image is the first costume in the toggle above -->
       <div class="ib__portrait">
-        <img src="1.webp" alt="Emi Maeda">
+        <img id="ibPortrait" src="1.webp" alt="Emi Maeda, Hero Costume">
       </div>
 
       <div class="ib__section">Biographical Information</div>
@@ -438,6 +459,19 @@
   // Escape key closes it too
   document.addEventListener('keydown', function(e){
     if(e.key === 'Escape') closeLightbox();
+  });
+
+  // Costume toggle: swap the portrait image and highlight the active label
+  var portrait = document.getElementById('ibPortrait');
+  document.querySelectorAll('.cbtn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if(portrait){
+        portrait.src = btn.getAttribute('data-src');
+        portrait.alt = 'Emi Maeda, ' + btn.getAttribute('data-label');
+      }
+      document.querySelectorAll('.cbtn').forEach(function(b){ b.classList.remove('is-active'); });
+      btn.classList.add('is-active');
+    });
   });
 
   // Light deterrent against right-click saving and dragging images
