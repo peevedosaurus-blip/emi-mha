@@ -148,7 +148,22 @@
 
   /* gallery */
   .gallery{ display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:14px; }
-  .gallery img{ width:100%; height:100%; object-fit:cover; border:1px solid var(--line); border-radius:6px; }
+  .gallery img{ width:100%; height:100%; object-fit:cover; border:1px solid var(--line); border-radius:6px; cursor:zoom-in; }
+  .ib__portrait img{ cursor:zoom-in; }
+
+  /* lightbox */
+  .lightbox{
+    position:fixed; inset:0; z-index:100; display:none;
+    align-items:center; justify-content:center; padding:28px;
+    background:rgba(0,0,0,.92); cursor:zoom-out;
+  }
+  .lightbox.open{ display:flex; }
+  .lightbox img{ max-width:100%; max-height:100%; object-fit:contain; cursor:default; box-shadow:0 12px 50px rgba(0,0,0,.6); border-radius:4px; }
+  .lightbox__close{
+    position:absolute; top:14px; right:22px; background:none; border:none;
+    color:#fff; font-size:38px; line-height:1; cursor:pointer; opacity:.85;
+  }
+  .lightbox__close:hover{ opacity:1; }
 
   /* ---------- infobox ---------- */
   .infobox{
@@ -385,6 +400,55 @@
 <footer>
   A fan-made page for an original character. Not affiliated with or endorsed by the creators of My Hero Academia.
 </footer>
+
+<!-- ================= LIGHTBOX ================= -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox__close" aria-label="Close image">&times;</button>
+  <img src="" alt="">
+</div>
+
+<script>
+(function(){
+  var lb = document.getElementById('lightbox');
+  var lbImg = lb.querySelector('img');
+
+  function openLightbox(src, alt){
+    lbImg.src = src;
+    lbImg.alt = alt || '';
+    lb.classList.add('open');
+    lb.setAttribute('aria-hidden', 'false');
+  }
+  function closeLightbox(){
+    lb.classList.remove('open');
+    lb.setAttribute('aria-hidden', 'true');
+    lbImg.removeAttribute('src');
+  }
+
+  // Make gallery images and the portrait open full screen
+  document.querySelectorAll('.gallery img, .ib__portrait img').forEach(function(img){
+    img.addEventListener('click', function(){
+      openLightbox(img.currentSrc || img.src, img.alt);
+    });
+  });
+
+  // Click the backdrop (or the close button) to exit; click on the image itself does nothing
+  lb.addEventListener('click', closeLightbox);
+  lbImg.addEventListener('click', function(e){ e.stopPropagation(); });
+
+  // Escape key closes it too
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeLightbox();
+  });
+
+  // Light deterrent against right-click saving and dragging images
+  document.addEventListener('contextmenu', function(e){
+    if(e.target.tagName === 'IMG') e.preventDefault();
+  });
+  document.querySelectorAll('img').forEach(function(img){
+    img.setAttribute('draggable', 'false');
+  });
+})();
+</script>
 
 </body>
 </html>
