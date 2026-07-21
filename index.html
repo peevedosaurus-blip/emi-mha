@@ -222,9 +222,11 @@
   }
 
   /* ---------- responsive ---------- */
-  @media (max-width:900px){
-    .wrap{ grid-template-columns:1fr; }
-    .infobox{ position:static; max-width:360px; margin:0 auto 10px; order:-1; }
+    @media (max-width:900px){
+    .wrap{ display:flex; flex-direction:column; padding:20px 16px 60px; }
+    .wrap > aside{ order:1; width:100%; }
+    .wrap > main{ order:2; }
+    .infobox{ position:static; max-width:360px; margin:0 auto 18px; }
     h1.title{ font-size:34px; }
     .topnav, .search{ display:none; }
   }
