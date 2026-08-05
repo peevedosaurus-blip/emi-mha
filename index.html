@@ -105,9 +105,13 @@
   .tabs .tab:hover{ text-decoration:none; border-color:var(--red); }
   .tabs .tab.is-active:hover{ border-color:var(--red-dk); }
   .panel[hidden]{ display:none; }
-  h2, h3{ scroll-margin-top:74px; }
+  h2, h3, h4{ scroll-margin-top:74px; }
   .toc{ background:var(--panel-2); border:1px solid var(--line); border-radius:6px; padding:14px 18px 16px; margin:0 0 30px; max-width:620px; }
-  .toc__title{ font-family:"Oswald",sans-serif; font-weight:600; text-transform:uppercase; letter-spacing:.05em; font-size:14px; color:var(--head); margin-bottom:8px; }
+  .toc__head{ display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:8px; }
+  .toc__title{ font-family:"Oswald",sans-serif; font-weight:600; text-transform:uppercase; letter-spacing:.05em; font-size:14px; color:var(--head); }
+  .toc__toggle{ background:none; border:none; cursor:pointer; color:var(--link); font-family:"Oswald",sans-serif; font-size:12px; text-transform:uppercase; letter-spacing:.04em; padding:0; }
+  .toc__toggle:hover{ text-decoration:underline; }
+  .toc.collapsed ol{ display:none; }
   .toc ol{ counter-reset:item; list-style:none; margin:0; padding-left:0; }
   .toc ol ol{ padding-left:20px; margin:3px 0 6px; }
   .toc li{ margin:4px 0; }
@@ -122,6 +126,10 @@
   h3{
     font-family:"Oswald",sans-serif; font-weight:600; color:var(--head);
     font-size:19px; margin:26px 0 6px; letter-spacing:.02em;
+  }
+  h4{
+    font-family:"Oswald",sans-serif; font-weight:600; color:var(--head);
+    font-size:15px; margin:20px 0 4px; letter-spacing:.03em; text-transform:uppercase;
   }
   p{ margin:12px 0; }
 
@@ -396,8 +404,11 @@
 
     <!-- ================= SYNOPSIS (tab) ================= -->
     <div class="panel" id="panel-synopsis" hidden>
-      <nav class="toc" aria-label="Contents">
-        <div class="toc__title">Contents</div>
+      <nav class="toc" id="toc" aria-label="Contents">
+        <div class="toc__head">
+          <span class="toc__title">Contents</span>
+          <button type="button" class="toc__toggle" aria-expanded="true">[hide]</button>
+        </div>
         <ol>
           <li><a href="#history">History</a>
             <ol>
@@ -414,6 +425,16 @@
               <li><a href="#quirk-apprehension">Quirk Apprehension Test Arc</a></li>
               <li><a href="#battle-trial">Battle Trial Arc</a></li>
               <li><a href="#usj">Unforeseen Simulation Joint Arc</a></li>
+              <li><a href="#sports-festival">U.A. Sports Festival Arc</a>
+                <ol>
+                  <li><a href="#sf-prep">Preparation</a></li>
+                  <li><a href="#sf-obstacle">Obstacle Race</a></li>
+                  <li><a href="#sf-cavalry">Cavalry Battle</a></li>
+                  <li><a href="#sf-tournament">Tournament</a></li>
+                  <li><a href="#sf-watching">Remaining Matches</a></li>
+                  <li><a href="#sf-aftermath">Aftermath</a></li>
+                </ol>
+              </li>
             </ol>
           </li>
         </ol>
@@ -469,6 +490,31 @@
       <p>With the Ruins Zone cleared, Kirishima wants to search for their classmates, but Bakugo decides to return to the central plaza and take down Kurogiri, reasoning that cutting off the villains' escape route helps everyone trapped inside. Narumi, more concerned at first with finding the others, recognizes the logic of removing the person who separated the class and goes with them. They reach the plaza as Kurogiri tries to warp Midoriya away, and Bakugo pins the villain by the neck armor, exposing that Kurogiri's physical body is concealed within the smoke, while Narumi stays close, ready to step in if Bakugo loses his grip.</p>
       <p>Shigaraki orders the Nomu to free Kurogiri, and when the creature suddenly moves toward Bakugo, Narumi reacts before she can gauge its speed or strength, stepping between them and reinforcing her body with Mass Inversion to take the blow herself, with no idea whether her durability will hold. All Might arrives before the Nomu lands the hit and intercepts it. Once the danger passes, Bakugo snaps at her for interfering and assuming he needed protection, but she does not argue; she is more unsettled by her own reaction than by his anger, having moved without measuring the incoming force, calculating her output, or weighing the consequences.</p>
       <p>She stays outside the confrontation while All Might fights the Nomu, and after Iida returns with the U.A. staff and the students are escorted out, she quietly replays the moment. Her training had taught her to treat strength and durability as abilities that demanded careful preparation, yet at the USJ she used both on pure instinct because someone else was in immediate danger. The incident becomes the first clear sign that her protective instincts can override the fear and hesitation that normally hold her Quirk back.</p>
+      <h3 id="sports-festival">U.A. Sports Festival Arc</h3>
+      <p>Two days after the U.S.J. attack, Class 1-A returns to school. The others spend the morning on the villains and the media coverage, but Narumi says almost nothing, still unsettled by having stepped between Bakugo and the Nomu without thinking and with no intention of discussing it. When Kirishima asks if she is all right, she just says she is tired. Aizawa, heavily bandaged, announces that the U.A. Sports Festival will go ahead as planned, calling it one of the biggest chances for students to draw the attention of Pro Heroes, and arguing that canceling it would only make U.A. look intimidated. Narumi understands the logic, but the idea of returning to national television unsettles her, since it will be her first large broadcast since she left acting and she wants to be seen as a hero student rather than a former child actress. At the end of the day other departments crowd the exit to size up the class that survived the U.S.J.; Bakugo insults all of them, and while Narumi thinks he has needlessly made enemies of nearly the whole first year, she understands why Kirishima responds to him, since he says exactly what he means to do without softening it for anyone.</p>
+
+      <h4 id="sf-prep">Preparation</h4>
+      <p>Over the next two weeks she trains mostly on mobility: sustained flight, hard braking, sharp turns, controlled bursts of acceleration, and lifting and carrying heavy objects in the air, expecting obstacles that demand both movement and strength. She spends far less time on direct combat, still uncomfortable sparring at higher output and mostly striking reinforced targets rather than classmates. Tatsuya encourages her to treat the Festival as a chance to establish the range she can use safely rather than a test of her limits, which she agrees with, though she is more focused on not making a public mistake than on finding out how strong she really is.</p>
+
+      <h4 id="sf-obstacle">Obstacle Race</h4>
+      <p>On the day itself, the stadium cameras immediately change how she carries herself, straightening her posture and pulling her back into her polished public manner. When Bakugo uses the athlete pledge to declare he will win, angering the other competitors, she mutters that he has somehow made things worse. The first event is a four-kilometer obstacle race. Todoroki freezes the exit at the start, and Narumi lifts above the ice, hugging the ceiling of the passage until space opens ahead. At the robot obstacle she flies through gaps rather than bringing down a Zero-Pointer, unwilling to use that much force with so many students nearby, disabling smaller machines and catching a falling chunk of robot before it can hit the students behind her, which costs her several seconds but keeps the route open. She clears The Fall easily by flying over the ravine, and stays above the minefield without going at full speed while others are launched around unpredictably. Iida passes her near the end, and she slows early to avoid overshooting the line, finishing fifth behind Midoriya, Todoroki, Bakugo, and Iida. The observing heroes note her flight, the contrast between her small frame and the strength she showed moving the debris, and the time she gave up to keep others safe. Fifth place also makes her one of the more valuable targets in the next event.</p>
+
+      <h4 id="sf-cavalry">Cavalry Battle</h4>
+      <p>The second event is a fifteen-minute Cavalry Battle. Narumi forms a team with Shoji, Tsuyu, and Mineta, clearly annoyed at the last addition even as she admits his Quirk is useful. As the rider, she hovers just above her teammates' shoulders to take weight off them, which makes the team faster and easier to steer. Team Ryōriki avoids the strongest teams, ignores Midoriya's ten-million-point headband, and picks off lower-value teams that drift away from the main fight, with Mineta's sticky spheres forcing pursuers to back off. They lose one headband but take several smaller ones, and narrowly dodge Team Todoroki's ice-and-electricity combination after Shoji warns that Kaminari is charging a wide discharge. In the final minute she focuses on protecting their remaining points rather than joining the scramble between the top teams, and they finish fifth to advance.</p>
+
+      <h4 id="sf-tournament">Tournament</h4>
+      <p>Twenty-four students move on to a block tournament. During the recreational break beforehand, Kaminari and Mineta trick the girls of 1-A into cheerleading uniforms by claiming the school requested it; Narumi is less bothered by the outfit than by having walked in front of a national audience without checking the request, and stares Kaminari down until he apologizes.</p>
+      <p>Her first match is against Daichi Mogura, whose Quirk, Burrow, lets him tunnel and track movement by vibration. She hovers so he cannot feel her through the ground, refuses to strike him while he is half-buried to avoid a neck or spinal injury, and finally baits him by touching down near the edge before lifting away; he bursts up at full speed, misjudges the boundary, and surfaces outside the ring for a ring-out. She hovers over the hole and asks whether that even counts, landing more annoyed than proud, though the heroes note that she read his tracking and won without hurting him.</p>
+      <p>In the block semifinal she faces Nao Kuroda, whose Quirk, Motor Lock, interrupts muscle control through sustained skin contact. Unwilling to risk a hard strike against an opponent whose durability she cannot judge, she decides to restrain Kuroda and carry them out instead. She lands and grabs Kuroda's forearm, but Kuroda catches her exposed wrist, and the paralysis spreads through her hand, arm, and shoulder. Her takeoff comes out uneven as one side of her body stops responding; she tilts, drops back onto the arena, and Kuroda holds on long enough for the effect to reach her torso and a leg. She stays conscious and can still feel Mass Inversion active, but can no longer coordinate it, and Kuroda guides her across the boundary for the win. Her durability does nothing here, since Motor Lock does not injure her so much as take away control, and Aizawa later puts it plainly: she treated getting a grip as the end of the exchange without thinking about what that contact let her opponent do.</p>
+
+      <h4 id="sf-watching">Remaining Matches</h4>
+      <p>More embarrassed than hurt once the paralysis wears off, she returns to the stands. Kirishima congratulates her for reaching the semifinal, but she brushes it off, saying she grabbed someone whose Quirk needed contact and does not deserve praise for it. Bakugo is blunter, telling her she handed them her arm; when she says she noticed, he tells her not to do it again, which she prefers to reassurance, since he treats the loss as a fixable mistake rather than proof she is weak.</p>
+      <p>She watches the rest more carefully. During Ochaco's match against Bakugo she is irritated by the crowd assuming he is being cruel to a fragile girl, when he is really keeping his distance because he respects how dangerous her touch is and is one of the few people treating her as a real threat; Ochaco's falling-debris plan surprises her, and she is disappointed when it fails. Kirishima's draw with Tetsutetsu strikes her as absurd but pulls her in, and she remarks that they seem like the same person in different colors. Midoriya's match with Todoroki affects her more than she expects: she is disturbed by his self-inflicted injuries, but his insistence that Todoroki's fire belongs to Todoroki and not Endeavor stays with her, because Kiku spent years treating Mass Inversion as something embarrassing until she found a way to market it, and someone else deciding what a person's power should mean feels uncomfortably familiar. When Kirishima later loses to Bakugo, she brings him water afterward and tells him he nearly broke Bakugo's face, which he takes as a compliment.</p>
+
+      <h4 id="sf-aftermath">Aftermath</h4>
+      <p>In the finals, Bakugo repeatedly demands that Todoroki use his fire, wanting a win at full strength rather than just a win; Todoroki lets his flames vanish, and Bakugo blasts him out but is furious it was not a true clash, ending the ceremony chained and muzzled to the podium. Kirishima worries the restraints are excessive; Narumi says the muzzle should probably stay. Todoroki takes second and Bakugo first, and though she wins no medal, her performance draws heavy professional attention for her aerial mobility, her teamwork, and her tactical read of opponents, alongside clear notes that she leans too much on caution and lacks close-range experience.</p>
+      <p>The media treats the whole thing as her return to television rather than the start of a hero career, fixating on her looks and her acting past against the power of Mass Inversion, which she hates. Tatsuya and Asahi congratulate her, Tatsuya especially glad she used her Quirk publicly without letting fear stop her, though she argues that being carried out of bounds while paralyzed is nothing to celebrate. Kiku messages her about how well she looked on camera and suggests she get professional representation before the next event; Narumi does not reply. She reviews the loss again and again, realizing she had assumed her strength and durability would make close contact safe, and the Festival forces her to face the gap between raw power and actual combat skill. It also changes how she sees Bakugo: still abrasive, but she can no longer dismiss the intelligence in how he tests, observes, and adapts, which stands in direct contrast to her own habit of waiting for certainty before she acts. Her final results are fifth in the obstacle race, fifth in the Cavalry Battle, and a qualifying-block semifinal finish in the tournament.</p>
+
     </div>
 
     <!-- ================= RELATIONSHIPS (tab) ================= -->
@@ -613,6 +659,19 @@
   });
   var brand = document.querySelector('.brand');
   if(brand){ brand.addEventListener('click', function(){ showPanel('overview'); }); }
+
+  // Collapsible Contents box on the Synopsis tab
+  var toc = document.getElementById('toc');
+  if(toc){
+    var tocToggle = toc.querySelector('.toc__toggle');
+    if(tocToggle){
+      tocToggle.addEventListener('click', function(){
+        var collapsed = toc.classList.toggle('collapsed');
+        tocToggle.textContent = collapsed ? '[show]' : '[hide]';
+        tocToggle.setAttribute('aria-expanded', String(!collapsed));
+      });
+    }
+  }
 
   // Light deterrent against right-click saving and dragging images
   document.addEventListener('contextmenu', function(e){
